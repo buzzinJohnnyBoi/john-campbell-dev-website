@@ -1,12 +1,6 @@
-<script lang="ts">
+<script setup lang="ts">
 useHead({
   title: "John Campbell Software Developer",
-  meta: [
-    {
-      name: "description",
-      content: "John Campbell Software Developer Site",
-    },
-  ],
 });
 </script>
 
