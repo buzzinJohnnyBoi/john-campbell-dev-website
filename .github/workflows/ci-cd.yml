@@ -67,7 +67,7 @@ jobs:
           script: |
             git config --global credential.helper store
             echo "https://${{ secrets.GIT_PAT }}:x-oauth-basic@github.com" > ~/.git-credentials
-            cd ~/johncampbell.dev-website
+            cd ${{ secrets.DEPLOY_PATH }}
             git pull origin master
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
