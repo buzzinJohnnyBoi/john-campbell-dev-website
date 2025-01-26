@@ -1,0 +1,79 @@
+name: johncampbell.dev CI/CD
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install chromium --with-deps
+
+      - name: Run Tests
+        run: |
+          npm run build
+          npm test
+
+      - name: Install OpenVPN
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openvpn net-tools
+
+      - name: Setup VPN config
+        run: |
+          mkdir -p ~/.ovpn
+          echo "${{ secrets.OVPN_CONFIG }}" > ~/.ovpn/config.ovpn
+          echo "${{ secrets.OVPN_AUTH }}" > ~/.ovpn/auth.txt
+
+      - name: Set correct permissions
+        run: |
+          sudo chown root:root ~/.ovpn/config.ovpn
+          sudo chown root:root ~/.ovpn/auth.txt
+          sudo chmod 600 ~/.ovpn/config.ovpn
+          sudo chmod 600 ~/.ovpn/auth.txt
+
+      - name: Connect VPN and verify
+        run: |
+          sudo openvpn --config ~/.ovpn/config.ovpn --auth-user-pass ~/.ovpn/auth.txt --daemon
+          echo "Waiting for VPN connection to establish..."
+          sleep 10
+          ifconfig -a
+          ping -c 4 ${{ secrets.SERVER_HOST }}
+          netstat -nr
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            git config --global credential.helper store
+            echo "https://${{ secrets.GIT_PAT }}:x-oauth-basic@github.com" > ~/.git-credentials
+            cd ~/johncampbell.dev-website
+            git pull origin master
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm ci
+            npm run build
+            pm2 restart all
+
+      - name: Disconnect VPN
+        run: sudo killall openvpn
