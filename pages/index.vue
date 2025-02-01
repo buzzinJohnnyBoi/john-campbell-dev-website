@@ -12,7 +12,8 @@ useHead({
     <img
       src="/media/john-campbell.png"
       alt="Description of image"
-      class="mt-4 w-[500px]"
+      class="mt-4 w-[100px] rounded-full"
     />
   </div>
+  <HomeResume />
 </template>

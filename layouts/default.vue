@@ -2,5 +2,6 @@
   <div>
     <Nav />
     <slot />
+    <Footer />
   </div>
 </template>
