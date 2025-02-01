@@ -1,9 +1,7 @@
-name: johncampbell.dev CI/CD
+name: johncampbell.dev Deploy on push
 
 on:
   push:
-    branches: ["master"]
-  pull_request:
     branches: ["master"]
 
 jobs:
@@ -16,10 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 22.xy
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "22.x"
           cache: "npm"
       - name: Install dependencies
         run: |
