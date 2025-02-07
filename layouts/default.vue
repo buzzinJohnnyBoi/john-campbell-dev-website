@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="bg-black">
     <Nav />
-    <slot />
+    <div class="min-h-[calc(100vh-206px)]">
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>
