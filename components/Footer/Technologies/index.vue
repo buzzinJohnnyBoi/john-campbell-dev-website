@@ -29,9 +29,6 @@
 </template>
 
 <style scoped>
-/* .tech-thing {
-} */
-
 @media (min-width: 1100px) {
   .tech-container {
     @apply flex justify-center items-center;

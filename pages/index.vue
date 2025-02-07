@@ -5,7 +5,14 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full h-full bg-blue-900 text-white">
+  <div class="w-full h-full text-white">
+    <div>
+      <img
+        src="/media/video-placeholder.png"
+        alt="Description of image"
+        class="mt-4 w-full"
+      />
+    </div>
     <h1 class="text-3xl font-bold underline">
       John Campbell Professional Site!
     </h1>
