@@ -5,22 +5,24 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full h-full text-white">
+  <div class="w-full h-full">
     <div>
       <img
         src="/media/video-placeholder.png"
         alt="Description of image"
-        class="mt-4 w-full"
+        class="w-full"
       />
     </div>
-    <h1 class="text-3xl font-bold underline">
-      John Campbell Professional Site!
-    </h1>
-    <img
-      src="/media/john-campbell.png"
-      alt="Description of image"
-      class="mt-4 w-[100px] rounded-full"
-    />
+    <div class="flex flex-col items-center">
+      <h1 class="text-3xl text-center font-bold">My name is John Campbell</h1>
+      <div>
+        <img
+          src="/media/john-campbell.png"
+          alt="Description of image"
+          class="mt-4 w-[100px] rounded-full"
+        />
+        <HomeResume />
+      </div>
+    </div>
   </div>
-  <HomeResume />
 </template>

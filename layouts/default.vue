@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black">
+  <div class="bg-white test-black">
     <Nav />
     <div class="min-h-[calc(100vh-206px)]">
       <slot />
