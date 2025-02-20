@@ -18,7 +18,7 @@ const links = [
     >
       <ul class="flex space-x-4 items-center">
         <li class="small-screen">
-          <NavFoldable :links="links" />
+          <NavFoldable :links="links" :shrunkNav="y > 0" />
         </li>
         <NuxtLink to="/" class="jcampbell-logo"> John Campbell </NuxtLink>
         <li class="large-screen" v-for="(link, index) in links" :key="index">
