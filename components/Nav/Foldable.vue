@@ -3,6 +3,7 @@ import { onClickOutside } from "@vueuse/core";
 
 const props = defineProps<{
   links: { link: string; name: string }[];
+  shrunkNav: boolean;
 }>();
 
 const open = ref(false);
@@ -14,7 +15,7 @@ onClickOutside(target, () => (open.value = false));
 <template>
   <div ref="target">
     <div
-      class="p-1 hover:bg-black hover:rounded cursor-pointer"
+      class="p-1 pr-2 hover:bg-black hover:rounded cursor-pointer"
       v-on:click="open = !open"
     >
       <svg
@@ -35,7 +36,11 @@ onClickOutside(target, () => (open.value = false));
     <transition name="slide">
       <div
         v-if="open"
-        class="bg-gray-800 m-0 p-2 absolute top-[70px] left-0 flex flex-col w-[300px] max-w-full h-[calc(100vh-70px)]"
+        class="bg-gray-800 m-0 p-2 absolute left-0 flex flex-col w-[300px] max-w-full transition-all duration-750"
+        :class="{
+          'top-[90px] h-[calc(100vh-90px)]': !props.shrunkNav,
+          'top-[66px] h-[calc(100vh-66px)]': props.shrunkNav,
+        }"
       >
         <NavLink
           v-for="(link, index) in props.links"

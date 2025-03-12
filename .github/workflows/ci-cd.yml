@@ -24,6 +24,15 @@ jobs:
           npm ci
           npx playwright install chromium --with-deps
 
+      - name: Create .env.test file
+        run: |
+          echo "EMAIL=test@email.com" > .env.local
+          echo "EMAIL_HOST=127.0.0.1" >> .env.local
+          echo "EMAIL_PASSWORD=password" >> .env.local
+          echo "EMAIL_PORT=2525" >> .env.local
+          echo "EMAIL_SECURE=false" >> .env.local
+          echo "RECEIVING_EMAIL=test@joe.com" >> .env.local
+
       - name: Run Tests
         run: |
           npm run build
