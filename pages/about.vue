@@ -35,7 +35,6 @@ const facts: string[] = [
       (people call me other things too, but they are not as nice)
     </p>
     <p class="text-lg">Here are some facts about me:</p>
-    <!-- <ul class="text-left w-[60%] min-w-[90%] mx-auto"> -->
     <div class="mx-auto w-[60%] min-w-[90%]">
       <div v-for="fact in facts" :key="fact" class="text-left my-1">
         <div class="flex justify-start">
@@ -48,6 +47,5 @@ const facts: string[] = [
         </div>
       </div>
     </div>
-    <!-- </ul> -->
   </div>
 </template>

@@ -1,4 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.test" });
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -24,6 +26,13 @@ export default defineConfig({
     port: 3000,
     env: {
       HOST_URL: "http://localhost:3000",
+      EMAIL: process.env.EMAIL || "",
+      EMAIL_HOST: process.env.EMAIL_HOST || "",
+      EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || "",
+      EMAIL_PORT: process.env.EMAIL_PORT || "",
+      EMAIL_SECURE: process.env.EMAIL_SECURE === "true" ? "true" : "false",
+
+      RECEIVING_EMAIL: process.env.RECEIVING_EMAIL || "",
     },
   },
 });
