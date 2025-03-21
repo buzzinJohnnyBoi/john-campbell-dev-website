@@ -94,8 +94,7 @@ const submitForm = async () => {
           placeholder="Message....."
           v-model="message.message"
           required
-        >
-        </textarea>
+        ></textarea>
       </div>
       <div v-if="success" class="text-green-500 text-lg mt-2">
         {{ success }}
