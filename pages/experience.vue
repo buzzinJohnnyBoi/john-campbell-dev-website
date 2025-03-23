@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: "Experience - John Campbell",
+});
+</script>
+
 <template>
   <div class="max-w-6xl mx-auto px-4 py-8">
     <h1 class="text-5xl font-bold text-center mb-10">Experience</h1>
@@ -14,7 +20,7 @@
         </div>
         <div class="mt-2">
           <span
-            class="inline-block bg-indigo-900 text-indigo-200 px-3 py-1 rounded-full text-sm font-medium"
+            class="inline-block bg-indigo-900 text-indigo-200 px-3 py-1 rounded text-sm font-medium"
           >
             July 2023 - Present
           </span>

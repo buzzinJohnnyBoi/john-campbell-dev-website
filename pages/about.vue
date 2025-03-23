@@ -1,4 +1,8 @@
-<script lang="ts" setup>
+<script setup lang="ts">
+useHead({
+  title: "About - John Campbell Software Developer",
+});
+
 const currentDate = new Date();
 const dateStartCoding = new Date("2018-02-15");
 const dateStartProCoding = new Date("2023-07-11");
@@ -25,27 +29,26 @@ const facts: string[] = [
 </script>
 
 <template>
-  <div class="text-center mt-2">
-    <h1 class="text-4xl my-2">About</h1>
-    <p class="text-lg">
+  <div class="text-center mt-2 mb-4">
+    <h1 class="text-5xl font-bold text-center mb-5">About</h1>
+    <p class="text-lg font-bold">
       My Name is John Campbell, and I am a Christian, Software Developer,
       hacker, and bitcoin miner.
     </p>
     <p class="text-lg">
       (people call me other things too, but they are not as nice)
     </p>
-    <p class="text-lg">Here are some facts about me:</p>
-    <div class="mx-auto w-[60%] min-w-[90%]">
-      <div v-for="fact in facts" :key="fact" class="text-left my-1">
-        <div class="flex justify-start">
-          <li></li>
-          <span>
-            <div class="inline">
-              {{ fact }}
-            </div>
-          </span>
-        </div>
-      </div>
+    <p class="text-lg mb-4">Here are some facts about me:</p>
+    <div class="mx-auto w-full max-w-5xl">
+      <ul class="list-disc list-inside space-y-2">
+        <li
+          v-for="fact in facts"
+          :key="fact"
+          class="bg-gray-100 p-4 rounded shadow"
+        >
+          {{ fact }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
