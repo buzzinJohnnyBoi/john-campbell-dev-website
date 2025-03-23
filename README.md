@@ -1,75 +1,11 @@
-# Nuxt Minimal Starter
+# John Campbell Website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Made with `nuxt`, `tailwind css`.
 
-## Setup
+Hosted on one of my high availability VMs (hosted in the shop), deployed using CI / CD with `github actions`
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+How the CI / CD works is:
+  1) a github actions runner runs the building and testing process.
+  2) if the building and testing succeedes, the runner will authenticate to my `pfsense` firewall using a client cert, username and password.  
+    note the user is only allowed to access the VM the website is hosted.
+  3) the runner will then use a ssh key to login to the deployment VM, pull the latest changes, run the build process and restart the web server.
