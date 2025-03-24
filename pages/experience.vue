@@ -130,7 +130,7 @@ useHead({
 
         <ExperienceProject
           name="Drawing Finder App"
-          summary="Developed a desktop app that connects to an API to find drawings."
+          summary="Developed a desktop app that connects to my API to find drawings."
           :descriptionArray="[
             'Royce has over 50,000 drawings on their drawing server orginized by customer, so finding specific drawings can be difficult.',
             'The solution: a Node.js application connects to the file server and indexes the files once a day. (using cron)',
@@ -139,6 +139,44 @@ useHead({
           ]"
           :techArray="['Rust', 'JavaScript', 'Node.js', 'Express.js']"
         />
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div class="flex flex-col md:flex-row md:justify-between mb-4">
+        <div>
+          <h2 class="text-2xl font-semibold text-indigo-400">Other</h2>
+          <div>
+            <h4 class="font-semibold text-lg text-gray-200 mb-2">Projects:</h4>
+            <ExperienceProject
+              name="Car Web Scraping System"
+              summary="For my family's car dealership. Scrapes the web for the best deals texts them to a user's phone."
+              :descriptionArray="[
+                'Scrapes Kijiji and facebook marketplace for the best deals on cars.',
+                'Uses a cron job to run the application every 15 minutes.',
+                'Will search for cars that have a certain price, mileage, and year range.',
+                'If a car is found that meets the criteria, it will text the user with the details.',
+              ]"
+              :techArray="['Node.js', 'Puppeteer']"
+            />
+            <ExperienceProject
+              name="This website"
+              :link="{
+                href: 'https://johncampbell.dev/',
+                text: 'johncampbell.dev',
+              }"
+              summary="Developed + deployed this website, used CI/CD and self-host it."
+              :descriptionArray="[
+                'CI / CD was difficult to setup, but the process works like this:',
+                '1. a github actions runner runs the building and testing process.',
+                '2. if the building and testing succeedes, the runner will authenticate to my pfsense firewall using a client cert, username and password.',
+                'note the user is only allowed to access the VM the website is hosted.',
+                '3. the runner will then use a ssh key to login to the deployment VM, pull the latest changes, run the build process and restart the web server.',
+              ]"
+              :techArray="['Nuxt', 'Vue', 'TailwindCSS', 'GitHub Actions']"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
