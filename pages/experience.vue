@@ -175,6 +175,51 @@ useHead({
               ]"
               :techArray="['Nuxt', 'Vue', 'TailwindCSS', 'GitHub Actions']"
             />
+
+            <ExperienceProject
+              name="Small Server Farm"
+              summary="Servers, switches, and other hardware for different hosting and service applications."
+              :descriptionArray="[
+                'Where I live, I have multiple servers, layer 3 switches, UPSes, a firewall / router, and a NAS.',
+                'My firewall / router is pfsense.',
+                'I have 2 cisco catalylst switches, which I have configured along with my router to have multiple VLANs.',
+                'I have a TrueNAS, which contains all important data as well as automatically backing up all VMs and containers.',
+                'UPS for power outages, so no downtime is experieced in the case of a power failure.',
+                'I have 2 servers with hypervisors, 1 is a Quadnode, so in total I have 4 proxmox instances, and 1 XCP-np instance.',
+                'A High-Availiblity Proxmox cluster is configured, so even if multiple proxmox nodes fail, all VMs and containers migrate over.',
+                'I host many web applications, (including this one), load balencers, password managers, notifcation servers and monitoring services.',
+                'How the hosting of websites work is a multi step process:',
+                '1) cloudflare is configured to proxy traffic to my public IP for the given domain.',
+                '2) A script is run to update the DNS records on cloudflare to the current public IP (as I don\'t pay for static ip)',
+                '3) 3 certifcates encrypt the traffic between cloudflare and my load balencer.',
+                '3) My pfsense firewall has firewall + nat rules allowing the traffic to the load balencer.',
+                '4) The traffic is sent to a Kemp load balencer, (which is a HA VM) which will distribute the traffic based on the domain / subdomain.',
+              ]"
+              :techArray="[]"
+            />
+
+            <ExperienceProject
+              name="Crypto mining shed"
+              summary="4 Antminer ASIC miners mine crypto while pumping the exuast (over 10,000 BTUs of heat) into a chicken barn."
+              :descriptionArray="[
+                'With my 4 younger brothers help, bought and re-purposed an old shed.',
+                'Main things were to clean it out, install the inlet, fan and exhast pipe',
+                'The exhast pipe into the barn is used whenever the barn need heat (which is most of the year)',
+                'The fan is for when the barn doesn\'t need heat.',
+              ]"
+              :techArray="[]"
+            />
+
+            <ExperienceProject
+              name="Contributing to Open Source"
+              summary="Contributed to multiple open source projects."
+              :descriptionArray="[
+                'most notiable open source projects I contributed to are:',
+                'Uptime Kuma - fancy self-hosting monitoring tool',
+                'Croner - 0 dependences, npm package.',
+              ]"
+              :techArray="[]"
+            />
           </div>
         </div>
       </div>
