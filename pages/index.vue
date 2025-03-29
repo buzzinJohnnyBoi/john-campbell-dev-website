@@ -13,7 +13,9 @@ useHead({
       </video>
     </div>
     <div class="flex flex-col items-center">
-      <h1 class="text-3xl text-center font-bold">Hi, I'm John Campbell</h1>
+      <h1 class="text-3xl text-center font-bold font-['Space_Grotesk']">
+        Hi, I'm John Campbell
+      </h1>
       <h3 class="text-2xl text-center font-bold mb-2">
         Welcome to my website!
       </h3>

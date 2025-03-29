@@ -107,4 +107,28 @@ export const technoligies = {
     logoColor: "white",
     link: "https://getbootstrap.com/",
   },
+  TailwindCSS: {
+    color: "38B2AC",
+    logo: "tailwind-css",
+    logoColor: "white",
+    link: "https://tailwindcss.com/",
+  },
+  Puppeteer: {
+    color: "40B5A4",
+    logo: "puppeteer",
+    logoColor: "black",
+    link: "https://pptr.dev/",
+  },
+  Vue: {
+    color: "35495E",
+    logo: "vuedotjs",
+    logoColor: "4FC08D",
+    link: "https://vuejs.org/",
+  },
+  Nuxt: {
+    color: "002E3B",
+    logo: "nuxt",
+    logoColor: "white",
+    link: "https://nuxtjs.org/",
+  },
 };

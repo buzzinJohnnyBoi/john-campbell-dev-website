@@ -29,22 +29,23 @@ const facts: string[] = [
 </script>
 
 <template>
-  <div class="text-center mt-2 mb-4">
-    <h1 class="text-5xl font-bold text-center mb-5">About</h1>
-    <p class="text-lg font-bold">
+  <div class="text-center mb-4 py-8">
+    <h1 class="text-5xl font-bold text-center mb-10 font-['Space_Grotesk']">
+      About
+    </h1>
+    <p class="text-lg font-bold font-['Space_Grotesk']">
       My Name is John Campbell, and I am a Christian, Software Developer,
       hacker, and bitcoin miner.
     </p>
-    <p class="text-lg">
-      (people call me other things too, but they are not as nice)
+    <p class="text-lg mb-4 font-['Inter']">
+      Here are some other facts about me:
     </p>
-    <p class="text-lg mb-4">Here are some facts about me:</p>
     <div class="mx-auto w-full max-w-5xl">
       <ul class="list-disc list-inside space-y-2">
         <li
           v-for="fact in facts"
           :key="fact"
-          class="bg-gray-100 p-4 rounded shadow"
+          class="bg-gray-100 p-4 rounded shadow font-['Inter'] leading-relaxed"
         >
           {{ fact }}
         </li>

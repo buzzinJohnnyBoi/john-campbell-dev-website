@@ -6,7 +6,9 @@ useHead({
 
 <template>
   <div class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-5xl font-bold text-center mb-10">Experience</h1>
+    <h1 class="text-5xl font-bold text-center mb-10 font-['Space_Grotesk']">
+      Experience
+    </h1>
 
     <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
       <div class="flex flex-col md:flex-row md:justify-between mb-4">
@@ -130,7 +132,7 @@ useHead({
 
         <ExperienceProject
           name="Drawing Finder App"
-          summary="Developed a desktop app that connects to an API to find drawings."
+          summary="Developed a desktop app that connects to my API to find drawings."
           :descriptionArray="[
             'Royce has over 50,000 drawings on their drawing server orginized by customer, so finding specific drawings can be difficult.',
             'The solution: a Node.js application connects to the file server and indexes the files once a day. (using cron)',
@@ -139,6 +141,89 @@ useHead({
           ]"
           :techArray="['Rust', 'JavaScript', 'Node.js', 'Express.js']"
         />
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div class="flex flex-col md:flex-row md:justify-between mb-4">
+        <div>
+          <h2 class="text-2xl font-semibold text-indigo-400">Other</h2>
+          <div>
+            <h4 class="font-semibold text-lg text-gray-200 mb-2">Projects:</h4>
+            <ExperienceProject
+              name="Car Web Scraping System"
+              summary="For my family's car dealership. Scrapes the web for the best deals texts them to a user's phone."
+              :descriptionArray="[
+                'Scrapes Kijiji and facebook marketplace for the best deals on cars.',
+                'Uses a cron job to run the application every 15 minutes.',
+                'Will search for cars that have a certain price, mileage, and year range.',
+                'If a car is found that meets the criteria, it will text the user with the details.',
+              ]"
+              :techArray="['Node.js', 'Puppeteer']"
+            />
+            <ExperienceProject
+              name="This website"
+              :link="{
+                href: 'https://johncampbell.dev/',
+                text: 'johncampbell.dev',
+              }"
+              summary="Developed + deployed this website, used CI/CD and self-host it."
+              :descriptionArray="[
+                'CI / CD was difficult to setup, but the process works like this:',
+                '1. a github actions runner runs the building and testing process.',
+                '2. if the building and testing succeedes, the runner will authenticate to my pfsense firewall using a client cert, username and password.',
+                'note the user is only allowed to access the VM the website is hosted.',
+                '3. the runner will then use a ssh key to login to the deployment VM, pull the latest changes, run the build process and restart the web server.',
+              ]"
+              :techArray="['Nuxt', 'Vue', 'TailwindCSS', 'GitHub Actions']"
+            />
+
+            <ExperienceProject
+              name="Small Server Farm"
+              summary="Servers, switches, and other hardware for different hosting and service applications."
+              :descriptionArray="[
+                'Where I live, I have multiple servers, layer 3 switches, UPSes, a firewall / router, and a NAS.',
+                'My firewall / router is pfsense.',
+                'I have 2 cisco catalylst switches, which I have configured along with my router to have multiple VLANs.',
+                'I have a TrueNAS, which contains all important data as well as automatically backing up all VMs and containers.',
+                'UPS for power outages, so no downtime is experieced in the case of a power failure.',
+                'I have 2 servers with hypervisors, 1 is a Quadnode, so in total I have 4 proxmox instances, and 1 XCP-np instance.',
+                'A High-Availiblity Proxmox cluster is configured, so even if multiple proxmox nodes fail, all VMs and containers migrate over.',
+                'I host many web applications, (including this one), load balencers, password managers, notifcation servers and monitoring services.',
+                'How the hosting of websites work is a multi step process:',
+                '1) cloudflare is configured to proxy traffic to my public IP for the given domain.',
+                '2) A script is run to update the DNS records on cloudflare to the current public IP (as I don\'t pay for static ip)',
+                '3) 3 certifcates encrypt the traffic between cloudflare and my load balencer.',
+                '3) My pfsense firewall has firewall + nat rules allowing the traffic to the load balencer.',
+                '4) The traffic is sent to a Kemp load balencer, (which is a HA VM) which will distribute the traffic based on the domain / subdomain.',
+              ]"
+              :techArray="[]"
+            />
+
+            <ExperienceProject
+              name="Crypto mining shed"
+              summary="4 Antminer ASIC miners mine crypto while pumping the exuast (over 10,000 BTUs of heat) into a chicken barn."
+              :descriptionArray="[
+                'With my 4 younger brothers help, bought and re-purposed an old shed.',
+                'Main things were to clean it out, install the inlet, fan and exhast pipe',
+                'The exhast pipe into the barn is used whenever the barn need heat (which is most of the year)',
+                'The fan is for when the barn doesn\'t need heat.',
+              ]"
+              :techArray="[]"
+            />
+
+            <ExperienceProject
+              name="Contributing to Open Source"
+              summary="Contributed to multiple open source projects."
+              :descriptionArray="[
+                'most notiable open source projects I contributed to are:',
+                'Uptime Kuma - fancy self-hosting monitoring tool',
+                'Croner - 0 dependences, npm package.',
+              ]"
+              :techArray="[]"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
