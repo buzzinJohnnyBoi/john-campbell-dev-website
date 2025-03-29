@@ -6,7 +6,9 @@ useHead({
 
 <template>
   <div class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-5xl font-bold text-center mb-10">Experience</h1>
+    <h1 class="text-5xl font-bold text-center mb-10 font-['Space_Grotesk']">
+      Experience
+    </h1>
 
     <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
       <div class="flex flex-col md:flex-row md:justify-between mb-4">
