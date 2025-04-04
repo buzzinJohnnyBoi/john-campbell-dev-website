@@ -17,7 +17,7 @@ useHead({
             ROYCE AYR Cutting Tools
           </h2>
           <h3 class="text-xl font-medium text-gray-300">
-            Software Developer / DevOps / Systems Administrator
+            Software Developer / DevOps
           </h3>
         </div>
         <div class="mt-2">
@@ -31,7 +31,7 @@ useHead({
 
       <div class="text-gray-400 mb-4">
         <p>
-          Responsiblities included developing and deploying various
+          Responsibilities included developing and deploying various
           applications, as well as managing IT systems such as physical servers
           and computers.
         </p>
@@ -80,8 +80,8 @@ useHead({
           name="Scanning 007"
           summary="Developed and deployed reporting / management software for production."
           :descriptionArray="[
-            'Allows the managers to schedule jobs, set priorites, view job durations, and report pieces completed.',
-            'Allows employees on the shop floor to see priorites and easily log setup / run times for single / group jobs and report pieces (scan)',
+            'Allows the managers to schedule jobs, set priorities, view job durations, and report pieces completed.',
+            'Allows employees on the shop floor to see priorities and easily log setup / run times for single / group jobs and report pieces (scan)',
             'Also has a timecard portion for employees to log their hours, and a reporting section for managers to see the data.',
             'Uses a complicated formula to calculate the projected inventory (as some parts are component parts of other parts)',
             'The 7th iteration of the application, hence the name.',
@@ -131,10 +131,31 @@ useHead({
         />
 
         <ExperienceProject
+          name="Invoicing Program"
+          summary="Developed and deployed a web app that automatically creates and sends invoices / statements."
+          :descriptionArray="[
+            'Integrates with existing ERP system to pull data from invoices to be able to automatically send and print (for the customers without emails) invoices and statements.',
+            'For COD customers, waits until payment is received in full before sending/printing the invoice with a paid watermark.',
+            'Emailed invoices are automatically sent every morning and statements at the beginning of the month.',
+            'Logs full history of changes to customer profiles, including when invoices were sent / printed.',
+            'Over 18000 invoices have been sent or printed since the application was deployed.',
+          ]"
+          :techArray="[
+            'TypeScript',
+            'Node.js',
+            'Next.js',
+            'React',
+            'MySQL',
+            'Bootstrap',
+            'Playwright',
+          ]"
+        />
+
+        <ExperienceProject
           name="Drawing Finder App"
           summary="Developed a desktop app that connects to my API to find drawings."
           :descriptionArray="[
-            'Royce has over 50,000 drawings on their drawing server orginized by customer, so finding specific drawings can be difficult.',
+            'Royce has over 50,000 drawings on their drawing server organized by customer, so finding specific drawings can be difficult.',
             'The solution: a Node.js application connects to the file server and indexes the files once a day. (using cron)',
             'A rust desktop app connects to the Node.js server and searches the index for the part number.',
             'If the part number file path is found, the rust desktop app opens the file in the default file viewer.',
@@ -171,7 +192,7 @@ useHead({
               :descriptionArray="[
                 'CI / CD was difficult to setup, but the process works like this:',
                 '1. a github actions runner runs the building and testing process.',
-                '2. if the building and testing succeedes, the runner will authenticate to my pfsense firewall using a client cert, username and password.',
+                '2. if the building and testing succeeds, the runner will authenticate to my pfsense firewall using a client cert, username and password.',
                 'note the user is only allowed to access the VM the website is hosted.',
                 '3. the runner will then use a ssh key to login to the deployment VM, pull the latest changes, run the build process and restart the web server.',
               ]"
@@ -184,29 +205,29 @@ useHead({
               :descriptionArray="[
                 'Where I live, I have multiple servers, layer 3 switches, UPSes, a firewall / router, and a NAS.',
                 'My firewall / router is pfsense.',
-                'I have 2 cisco catalylst switches, which I have configured along with my router to have multiple VLANs.',
+                'I have 2 Cisco Catalyst switches, which I have configured along with my router to have multiple VLANs.',
                 'I have a TrueNAS, which contains all important data as well as automatically backing up all VMs and containers.',
                 'UPS for power outages, so no downtime is experieced in the case of a power failure.',
                 'I have 2 servers with hypervisors, 1 is a Quadnode, so in total I have 4 proxmox instances, and 1 XCP-np instance.',
-                'A High-Availiblity Proxmox cluster is configured, so even if multiple proxmox nodes fail, all VMs and containers migrate over.',
-                'I host many web applications, (including this one), load balencers, password managers, notifcation servers and monitoring services.',
+                'A High-Availability Proxmox cluster is configured, so even if multiple proxmox nodes fail, all VMs and containers migrate over.',
+                'I host many web applications, (including this one), load balancers, password managers, notification servers and monitoring services.',
                 'How the hosting of websites work is a multi step process:',
-                '1) cloudflare is configured to proxy traffic to my public IP for the given domain.',
-                '2) A script is run to update the DNS records on cloudflare to the current public IP (as I don\'t pay for static ip)',
-                '3) 3 certifcates encrypt the traffic between cloudflare and my load balencer.',
-                '3) My pfsense firewall has firewall + nat rules allowing the traffic to the load balencer.',
-                '4) The traffic is sent to a Kemp load balencer, (which is a HA VM) which will distribute the traffic based on the domain / subdomain.',
+                '1) Cloudflare is configured to proxy traffic to my public IP for the given domain.',
+                '2) A script is run to update the DNS records on Cloudflare to the current public IP (as I don\'t pay for static IP).',
+                '3) Certificates encrypt the traffic between Cloudflare and my load balancer.',
+                '4) My pfsense firewall has firewall + NAT rules allowing the traffic to the load balancer.',
+                '5) The traffic is sent to a Kemp load balancer (which is a HA VM) which will distribute the traffic based on the domain/subdomain.',
               ]"
               :techArray="[]"
             />
 
             <ExperienceProject
               name="Crypto mining shed"
-              summary="4 Antminer ASIC miners mine crypto while pumping the exuast (over 10,000 BTUs of heat) into a chicken barn."
+              summary="4 Antminer ASIC miners mine crypto while pumping the exhaust (over 10,000 BTUs of heat) into a chicken barn."
               :descriptionArray="[
                 'With my 4 younger brothers help, bought and re-purposed an old shed.',
-                'Main things were to clean it out, install the inlet, fan and exhast pipe',
-                'The exhast pipe into the barn is used whenever the barn need heat (which is most of the year)',
+                'Main things were to clean it out, install the inlet, fan and the exhaust pipe',
+                'The exhaust pipe into the barn is used whenever the barn need heat (which is most of the year)',
                 'The fan is for when the barn doesn\'t need heat.',
               ]"
               :techArray="[]"
@@ -216,7 +237,7 @@ useHead({
               name="Contributing to Open Source"
               summary="Contributed to multiple open source projects."
               :descriptionArray="[
-                'most notiable open source projects I contributed to are:',
+                'most notable open source projects I contributed to are:',
                 'Uptime Kuma - fancy self-hosting monitoring tool',
                 'Croner - 0 dependences, npm package.',
               ]"
