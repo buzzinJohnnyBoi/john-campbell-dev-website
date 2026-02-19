@@ -13,9 +13,7 @@ useHead({
     <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
       <div class="flex flex-col md:flex-row md:justify-between mb-4">
         <div>
-          <h2 class="text-2xl font-semibold text-indigo-400">
-            ROYCE AYR Cutting Tools
-          </h2>
+          <h2 class="text-2xl font-semibold text-indigo-400">Klyck.io</h2>
           <h3 class="text-xl font-medium text-gray-300">
             Software Developer / DevOps
           </h3>
@@ -24,7 +22,61 @@ useHead({
           <span
             class="inline-block bg-indigo-900 text-indigo-200 px-3 py-1 rounded text-sm font-medium"
           >
-            July 2023 - Present
+            September 2025 - Present
+          </span>
+        </div>
+      </div>
+
+      <div class="text-gray-400 mb-4">
+        <p>
+          Responsibilities include working on klyck products, developing new
+          features, setting up HA clusters on cloud servers, and helping with
+          production support / troubleshooting downtime.
+        </p>
+      </div>
+      <div class="mt-6">
+        <h4 class="font-semibold text-lg text-gray-200 mb-2">Projects:</h4>
+
+        <ExperienceProject
+          name="Various Klyck Products"
+          :link="{
+            href: 'https://klyck.io/',
+            text: 'klyck.io',
+          }"
+          summary="Team of 5 developers, I work together with the team to develop and maintain various klyck products, which are all SAAS applications."
+          :descriptionArray="[
+            'Klyck products I have worked on include a content sharing portal, main app for managing / veiwing / sharing content, the admin portal, and their notion like editor.',
+            'I am also in the process of redoing their Microsoft Outlook and Microsoft Teams integrations.',
+            'I have also worked on deploying and maintaining the applications on AWS, using a kubernetes cluster on EKS.',
+          ]"
+          :techArray="[
+            'TypeScript',
+            'Java',
+            'Angular',
+            'NestJS',
+            'Kubernetes',
+            'PostgreSQL',
+            'AWS',
+          ]"
+        />
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div class="flex flex-col md:flex-row md:justify-between mb-4">
+        <div>
+          <h2 class="text-2xl font-semibold text-indigo-400">
+            ROYCE AYR Cutting Tools
+          </h2>
+          <h3 class="text-xl font-medium text-gray-300">
+            Software Developer / DevOps / IT Maintenance
+          </h3>
+        </div>
+        <div class="mt-2">
+          <span
+            class="inline-block bg-indigo-900 text-indigo-200 px-3 py-1 rounded text-sm font-medium"
+          >
+            July 2023 - August 2025
           </span>
         </div>
       </div>
