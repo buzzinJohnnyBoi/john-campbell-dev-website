@@ -131,4 +131,34 @@ export const technoligies = {
     logoColor: "white",
     link: "https://nuxtjs.org/",
   },
+  Angular: {
+    color: "DD0031",
+    logo: "angular",
+    logoColor: "white",
+    link: "https://angular.dev/",
+  },
+  Java: {
+    color: "ED8B00",
+    logo: "openjdk",
+    logoColor: "white",
+    link: "https://www.java.com/",
+  },
+  NestJS: {
+    color: "E0234E",
+    logo: "nestjs",
+    logoColor: "white",
+    link: "https://nestjs.com/",
+  },
+  Kubernetes: {
+    color: "326CE5",
+    logo: "kubernetes",
+    logoColor: "white",
+    link: "https://kubernetes.io/",
+  },
+  AWS: {
+    color: "232F3E",
+    logo: "amazonwebservices",
+    logoColor: "white",
+    link: "https://aws.amazon.com/",
+  },
 };
